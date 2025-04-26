@@ -1,0 +1,24 @@
+browesr-extensions-manager-ui TODO List:
+
+- [x] init project
+- [x] configur to publish
+- [x] plan css
+- [x] structure HTML
+- [x] write base styles
+- [ ] start adding syles
+  - [x] style button
+  - [x] style card
+  - [x] style selection
+  - [x] style header
+  - [ ] style footer
+- [ ] dynamicly import data from data.json
+- [ ] fix proportions
+- [ ] remake ios switch with theme
+- [ ] add dark mode
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]

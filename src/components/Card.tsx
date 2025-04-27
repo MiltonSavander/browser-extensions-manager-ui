@@ -3,7 +3,7 @@ import IOSSwitchComponent from "./IOSSwitch";
 import Button from "@mui/material/Button";
 import "../global.css";
 
-function Card({ logo, name, description, isActive, onSwitchChange }) {
+function Card({ logo, name, description, isActive, onSwitchChange, onClick }) {
   return (
     <div className="cardContainer">
       <div className="cardUpperContainer">
@@ -14,7 +14,7 @@ function Card({ logo, name, description, isActive, onSwitchChange }) {
         </div>
       </div>
       <div className="cardLowerContainer">
-        <Button className="roundedButton" variant="outlined" size="small">
+        <Button className="roundedButton" variant="outlined" size="small" onClick={onClick}>
           Remove
         </Button>
         <IOSSwitchComponent checked={isActive} onChange={onSwitchChange} />

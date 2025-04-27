@@ -6,12 +6,16 @@ function Cards({ filterExtensionsState }) {
   const [extensions, setExtensions] = React.useState(extensionsData);
 
   const toggleIsActive = (extensionName) => {
-    console.log(extensionName);
     const updatedExtensions = [...extensions];
     const extensionIndex = updatedExtensions.findIndex((extension) => extension.name === extensionName);
     if (extensionIndex !== -1) {
       updatedExtensions[extensionIndex].isActive = !updatedExtensions[extensionIndex].isActive;
     }
+    setExtensions(updatedExtensions);
+  };
+
+  const removeExtension = (extensionName) => {
+    const updatedExtensions = extensions.filter((extension) => extension.name !== extensionName);
     setExtensions(updatedExtensions);
   };
 
@@ -33,6 +37,7 @@ function Cards({ filterExtensionsState }) {
           description={extension.description}
           logo={extension.logo}
           isActive={extension.isActive}
+          onClick={() => removeExtension(extension.name)}
           onSwitchChange={() => toggleIsActive(extension.name)}
         />
       ))}

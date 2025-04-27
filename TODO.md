@@ -17,8 +17,8 @@ browesr-extensions-manager-ui TODO List:
 - [ ] remake ios switch with theme
 - [ ] add dark mode
 - [ ] add fuctionality
-  - [ ] add select all/active/inactive
-  - [ ] add remove function
+  - [x] add select all/active/inactive
+  - [x] add remove function
   - [ ]
 - [ ]
 - [ ]

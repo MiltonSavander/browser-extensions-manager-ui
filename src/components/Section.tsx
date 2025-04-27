@@ -3,9 +3,14 @@ import Button from "@mui/material/Button";
 
 function Section({ filterExtensionsState, setFilterExtensionsState }) {
   const styles = {
-    backgroundColor: "hsl(3, 71%, 56%)",
+    backgroundColor: "hsl(3, 77%, 44%)",
     color: "hsl(200, 60%, 99%)",
-    border: "1px solid hsl(3, 71%, 56%)",
+    border: "1px solid hsl(3, 77%, 44%)",
+    "&:hover": {
+      backgroundColor: "hsl(3, 86%, 64%)",
+      color: "hsl(200, 60%, 99%)",
+      border: "1px solid hsl(3, 86%, 64%)",
+    },
   };
 
   const buttons = [
@@ -24,7 +29,11 @@ function Section({ filterExtensionsState, setFilterExtensionsState }) {
             className="roundedButton"
             variant="outlined"
             size="large"
-            sx={filterExtensionsState === value ? styles : {}}
+            sx={
+              filterExtensionsState === value
+                ? styles
+                : { "&:hover": { color: "hsl(226, 11%, 37%)", border: "1px solid hsl(0, 0%, 78%)", backgroundColor: "#F6FAFD" } }
+            }
             onClick={() => setFilterExtensionsState(value)}
           >
             {label}

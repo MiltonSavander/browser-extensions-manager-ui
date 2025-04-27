@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import IOSSwitchComponent from "./IOSSwitch";
+import { Switch } from "@mui/material";
 import Button from "@mui/material/Button";
 import "../global.css";
 
@@ -17,7 +16,7 @@ function Card({ logo, name, description, isActive, onSwitchChange, onClick }) {
         <Button className="roundedButton" variant="outlined" size="small" onClick={onClick}>
           Remove
         </Button>
-        <IOSSwitchComponent checked={isActive} onChange={onSwitchChange} />
+        <Switch checked={isActive} onChange={onSwitchChange} />
       </div>
     </div>
   );

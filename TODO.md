@@ -11,15 +11,15 @@ browesr-extensions-manager-ui TODO List:
   - [x] style selection
   - [x] style header
   - [x] style footer
-- [ ] slyle interact and hover efetcts
+  - [ ] style button font
+- [x] slyle interact and hover efetcts
 - [x] dynamicly import data from data.json
 - [x] fix proportions
-- [ ] remake ios switch with theme
+- [x] remake ios switch with theme
 - [ ] add dark mode
-- [ ] add fuctionality
+- [x] add fuctionality
   - [x] add select all/active/inactive
   - [x] add remove function
-  - [ ]
 - [ ]
 - [ ]
 - [ ]

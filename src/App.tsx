@@ -3,6 +3,9 @@ import Cards from "./components/Cards";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./components/Header";
 import Section from "./components/Section";
+import { useState } from "react";
+import React from "react";
+import extensionsData from "../data.json";
 
 const theme = createTheme({
   components: {
@@ -31,7 +34,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#EEEEEF",
-          borderRadius: "1rem",
+          borderRadius: "0.7rem",
         },
       },
     },
@@ -39,12 +42,14 @@ const theme = createTheme({
 });
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false);
+  const [filterExtensionsState, setFilterExtensionsState] = useState("all");
   return (
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Section />
-        <Cards />
+        <Section filterExtensionsState={filterExtensionsState} setFilterExtensionsState={setFilterExtensionsState} />
+        <Cards filterExtensionsState={filterExtensionsState} />
         <div className="attribution">
           <div>
             <span style={{ color: "hsl(226, 11%, 37%)" }}>Challenge by </span>

@@ -2,11 +2,39 @@ import React from "react";
 import Card from "./Card";
 import extensionsData from "../../data.json";
 
-function Cards() {
+function Cards({ filterExtensionsState }) {
+  const [extensions, setExtensions] = React.useState(extensionsData);
+
+  const toggleIsActive = (extensionName) => {
+    console.log(extensionName);
+    const updatedExtensions = [...extensions];
+    const extensionIndex = updatedExtensions.findIndex((extension) => extension.name === extensionName);
+    if (extensionIndex !== -1) {
+      updatedExtensions[extensionIndex].isActive = !updatedExtensions[extensionIndex].isActive;
+    }
+    setExtensions(updatedExtensions);
+  };
+
+  const filteredExtensions = extensions.filter((extension) => {
+    if (filterExtensionsState === "active") {
+      return extension.isActive;
+    } else if (filterExtensionsState === "inactive") {
+      return !extension.isActive;
+    }
+    return true;
+  });
+
   return (
     <div className="cards">
-      {extensionsData.map((extension, index) => (
-        <Card key={index} name={extension.name} description={extension.description} logo={extension.logo} isActive={extension.isActive} />
+      {filteredExtensions.map((extension) => (
+        <Card
+          key={extension.name}
+          name={extension.name}
+          description={extension.description}
+          logo={extension.logo}
+          isActive={extension.isActive}
+          onSwitchChange={() => toggleIsActive(extension.name)}
+        />
       ))}
     </div>
   );

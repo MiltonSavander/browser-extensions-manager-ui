@@ -3,14 +3,7 @@ import IOSSwitchComponent from "./IOSSwitch";
 import Button from "@mui/material/Button";
 import "../global.css";
 
-function Card({ logo, name, description, isActive }) {
-  const [isChecked, setIsChecked] = useState(isActive); // Control the switch state
-
-  // Handle toggle state change
-  const handleSwitchChange = (event) => {
-    setIsChecked(event.target.checked);
-  };
-
+function Card({ logo, name, description, isActive, onSwitchChange }) {
   return (
     <div className="cardContainer">
       <div className="cardUpperContainer">
@@ -24,7 +17,7 @@ function Card({ logo, name, description, isActive }) {
         <Button className="roundedButton" variant="outlined" size="small">
           Remove
         </Button>
-        <IOSSwitchComponent checked={isChecked} onChange={handleSwitchChange} />
+        <IOSSwitchComponent checked={isActive} onChange={onSwitchChange} />
       </div>
     </div>
   );

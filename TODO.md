@@ -11,7 +11,8 @@ browesr-extensions-manager-ui TODO List:
   - [x] style selection
   - [x] style header
   - [x] style footer
-  - [ ] style button font
+  - [x] style button font
+  - [ ] style svgs
 - [x] slyle interact and hover efetcts
 - [x] dynamicly import data from data.json
 - [x] fix proportions
@@ -20,7 +21,7 @@ browesr-extensions-manager-ui TODO List:
 - [x] add fuctionality
   - [x] add select all/active/inactive
   - [x] add remove function
-- [ ]
+- [ ] add favlogo
 - [ ]
 - [ ]
 - [ ]

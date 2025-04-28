@@ -15,7 +15,7 @@ The designs were created to the following widths:
 
 - **Neutral 900**: `hsl(227, 75%, 14%)`
 - **Neutral 800**: `hsl(226, 25%, 17%)`
-- **Neutral 700**: `hsl(225, 23%, 24%)`
+- **Neutral 700**: `hsl(225, 23%, 24%)` resting icon
 - **Neutral 600**: `hsl(226, 11%, 37%)`
 - **Neutral 300**: `hsl(0, 0%, 78%)`
 - **Neutral 200**: `hsl(217, 61%, 90%)`
@@ -24,9 +24,9 @@ The designs were created to the following widths:
 
 ### Red
 
-- **Red 400**: `hsl(3, 86%, 64%)`
-- **Red 500**: `hsl(3, 71%, 56%)`
-- **Red 700**: `hsl(3, 77%, 44%)`
+- **Red 400**: `hsl(3, 86%, 64%)` dark select rest, dark switch rest, dark remove hover
+- **Red 500**: `hsl(3, 71%, 56%)` dark select hover, dark switch hover, light select hover,light switch hover,
+- **Red 700**: `hsl(3, 77%, 44%)` light select rest,light switch rest, light remove hover
 
 ### Gradient
 

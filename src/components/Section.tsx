@@ -1,15 +1,25 @@
-import React from "react";
+import React,  from "react";
 import Button from "@mui/material/Button";
+import { useTheme } from "@mui/material/styles"; // Import the useTheme hook
 
 function Section({ filterExtensionsState, setFilterExtensionsState }) {
-  const styles = {
-    backgroundColor: "hsl(3, 77%, 44%)",
-    color: "hsl(200, 60%, 99%)",
-    border: "1px solid hsl(3, 77%, 44%)",
+  const theme = useTheme(); // Use the theme hook to access the theme object
+  const activeStyles = {
+    backgroundColor: theme.palette.primary.dark, // Use theme value
+    color: theme.palette.primary[100], // Use theme value
+    border: `1px solid ${theme.palette.primary.dark}`, // Use theme value
     "&:hover": {
-      backgroundColor: "hsl(3, 86%, 64%)",
-      color: "hsl(200, 60%, 99%)",
-      border: "1px solid hsl(3, 86%, 64%)",
+      backgroundColor: theme.palette.primary.main, // Use theme value
+      color: theme.palette.primary[100], // Use theme value
+      border: `1px solid ${theme.palette.primary.main}`, // Use theme value
+    },
+  };
+
+  const inactiveStyles = {
+    "&:hover": {
+      color: theme.palette.primary[300], // Use theme value
+      border: `1px solid ${theme.palette.primary[400]}`, // Use theme value
+      backgroundColor: theme.palette.primary[200], // Use theme value
     },
   };
 
@@ -29,11 +39,7 @@ function Section({ filterExtensionsState, setFilterExtensionsState }) {
             className="roundedButton"
             variant="outlined"
             size="large"
-            sx={
-              filterExtensionsState === value
-                ? styles
-                : { "&:hover": { color: "hsl(226, 11%, 37%)", border: "1px solid hsl(0, 0%, 78%)", backgroundColor: "#F6FAFD" } }
-            }
+            sx={filterExtensionsState === value ? activeStyles : inactiveStyles}
             onClick={() => setFilterExtensionsState(value)}
           >
             {label}

@@ -1,15 +1,12 @@
 import { IconButton, useTheme } from "@mui/material";
-import React from "react";
 
-function header({ setDarkMode }) {
+function header({ setDarkMode }: { setDarkMode: (prevMode: boolean) => void }) {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === "dark"; // Check if the current theme is dark mode
 
   const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => {
-      console.log(!prevMode);
-      return !prevMode; // Toggle the dark mode
-    });
+    setDarkMode(!isDarkMode); // Toggle the dark mode
+    console.log(!isDarkMode);
   };
   return (
     <header className="extensionsHeader">

@@ -1,9 +1,7 @@
 import { useTheme } from "@mui/material";
-import React from "react";
 
 function Footer() {
   const theme = useTheme();
-  const isDarkMode = theme.palette.mode === "dark";
 
   return (
     <div className="attribution">

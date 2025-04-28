@@ -10,20 +10,20 @@ function Section({ filterExtensionsState, setFilterExtensionsState }: SectionPro
   const theme = useTheme(); // Use the theme hook to access the theme object
   const activeStyles = {
     backgroundColor: theme.palette.primary.dark, // Use theme value
-    color: theme.palette.primary[100], // Use theme value
+    color: theme.palette.neutral[100], // Use theme value
     border: `1px solid ${theme.palette.primary.dark}`, // Use theme value
     "&:hover": {
       backgroundColor: theme.palette.primary.main, // Use theme value
-      color: theme.palette.primary[100], // Use theme value
+      color: theme.palette.neutral[100], // Use theme value
       border: `1px solid ${theme.palette.primary.main}`, // Use theme value
     },
   };
 
   const inactiveStyles = {
     "&:hover": {
-      color: theme.palette.primary[300], // Use theme value
-      border: `1px solid ${theme.palette.primary[400]}`, // Use theme value
-      backgroundColor: theme.palette.primary[200], // Use theme value
+      color: theme.palette.neutral[300], // Use theme value
+      border: `1px solid ${theme.palette.neutral[400]}`, // Use theme value
+      backgroundColor: theme.palette.neutral[200], // Use theme value
     },
   };
 

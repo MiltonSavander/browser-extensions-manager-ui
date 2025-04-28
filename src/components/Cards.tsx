@@ -2,19 +2,32 @@ import React from "react";
 import Card from "./Card";
 import extensionsData from "../../data.json";
 
-function Cards({ filterExtensionsState }) {
+interface CardsProps {
+  filterExtensionsState: string;
+}
+
+function Cards({ filterExtensionsState }: CardsProps) {
   const [extensions, setExtensions] = React.useState(extensionsData);
 
-  const toggleIsActive = (extensionName) => {
-    const updatedExtensions = [...extensions];
-    const extensionIndex = updatedExtensions.findIndex((extension) => extension.name === extensionName);
+  interface Extension {
+    name: string;
+    description: string;
+    logo: string;
+    isActive: boolean;
+  }
+
+  const toggleIsActive = (extensionName: string): void => {
+    const updatedExtensions: Extension[] = [...extensions];
+    const extensionIndex: number = updatedExtensions.findIndex(
+      (extension) => extension.name === extensionName
+    );
     if (extensionIndex !== -1) {
       updatedExtensions[extensionIndex].isActive = !updatedExtensions[extensionIndex].isActive;
     }
     setExtensions(updatedExtensions);
   };
 
-  const removeExtension = (extensionName) => {
+  const removeExtension = (extensionName: string): void => {
     const updatedExtensions = extensions.filter((extension) => extension.name !== extensionName);
     setExtensions(updatedExtensions);
   };

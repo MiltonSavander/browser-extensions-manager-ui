@@ -8,6 +8,29 @@ import Footer from "./components/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    neutral: {
+      [key: string]: string;
+    };
+  }
+  interface PaletteOptions {
+    neutral?: {
+      [key: string]: string;
+    };
+  }
+  interface Theme {
+    boxShadow: string;
+    Width: string;
+    maxWidth: string;
+  }
+  interface ThemeOptions {
+    boxShadow?: string;
+    Width?: string;
+    maxWidth?: string;
+  }
+}
+
 const lightTheme = {
   palette: {
     mode: "light" as "light",
@@ -23,6 +46,8 @@ const lightTheme = {
       main: "hsl(3, 71%, 56%)",
       light: "hsl(3, 86%, 64%)",
       dark: "hsl(3, 77%, 44%)",
+    },
+    neutral: {
       "100": "hsl(200, 60%, 99%)",
       "200": "hsl(195, 2%, 98%)",
       "300": "hsl(226, 11%, 37%)",
@@ -48,6 +73,8 @@ const darkTheme = {
       main: "hsl(3, 71%, 56%)",
       light: "hsl(3, 77%, 44%)",
       dark: "hsl(3, 86%, 64%)",
+    },
+    neutral: {
       "100": "hsl(227, 75%, 14%)",
       "200": "hsl(226, 11%, 37%)",
       "300": "hsl(200, 60%, 99%)",
@@ -104,7 +131,7 @@ function App() {
             },
             "& .MuiSwitch-track": {
               borderRadius: 26 / 2,
-              backgroundColor: modeTheme.palette.primary[500], // gray when unchecked
+              backgroundColor: modeTheme.palette.neutral[500], // gray when unchecked
               opacity: 1,
               transition: "background-color 100ms ease-in-out",
             },
@@ -123,12 +150,12 @@ function App() {
             borderRadius: "9999px",
             textTransform: "none",
             color: modeTheme.palette.text.primary,
-            border: `1px solid ${modeTheme.palette.primary[500]}`,
+            border: `1px solid ${modeTheme.palette.neutral[500]}`,
             backgroundColor: modeTheme.palette.background.paper,
             transition: "all 0.3s ease",
             "&:hover": {
               backgroundColor: modeTheme.palette.primary.dark,
-              color: modeTheme.palette.primary[100],
+              color: modeTheme.palette.neutral[100],
               border: `1px solid ${modeTheme.palette.primary.dark}`,
             },
           },
@@ -141,10 +168,10 @@ function App() {
         },
         styleOverrides: {
           root: {
-            backgroundColor: modeTheme.palette.primary[600],
+            backgroundColor: modeTheme.palette.neutral[600],
             borderRadius: "0.7rem",
             "&:hover": {
-              backgroundColor: modeTheme.palette.primary[500],
+              backgroundColor: modeTheme.palette.neutral[500],
             },
           },
         },
@@ -165,7 +192,7 @@ function App() {
     root.style.setProperty("--background-paper", palette.background.paper);
     root.style.setProperty("--primary-main", palette.primary.main);
     root.style.setProperty("--primary-light", palette.primary.light);
-    root.style.setProperty("--card-border", palette.primary["200"]);
+    root.style.setProperty("--card-border", palette.neutral["200"]);
 
     // Shadow
     root.style.setProperty("--box-shadow", theme.boxShadow);

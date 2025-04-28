@@ -1,8 +1,12 @@
-import React,  from "react";
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles"; // Import the useTheme hook
 
-function Section({ filterExtensionsState, setFilterExtensionsState }) {
+interface SectionProps {
+  filterExtensionsState: string;
+  setFilterExtensionsState: (value: string) => void;
+}
+
+function Section({ filterExtensionsState, setFilterExtensionsState }: SectionProps) {
   const theme = useTheme(); // Use the theme hook to access the theme object
   const activeStyles = {
     backgroundColor: theme.palette.primary.dark, // Use theme value

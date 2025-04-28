@@ -11,20 +11,12 @@ function header({ setDarkMode }: { setDarkMode: (prevMode: boolean) => void }) {
   return (
     <header className="extensionsHeader">
       <img
-        src={
-          isDarkMode
-            ? "../../public/assets/images/dark-logo.svg"
-            : "../../public/assets/images/light-logo.svg"
-        }
+        src={isDarkMode ? "/assets/images/dark-logo.svg" : "/assets/images/light-logo.svg"}
         alt="logo"
       />
       <IconButton size="large" onClick={handleDarkModeToggle}>
         <img
-          src={
-            isDarkMode
-              ? "../../public/assets/images/icon-sun.svg"
-              : "../../public/assets/images/icon-moon.svg"
-          }
+          src={isDarkMode ? "/assets/images/icon-sun.svg" : "/assets/images/icon-moon.svg"}
           alt="moon"
         />
       </IconButton>

@@ -13,8 +13,8 @@ function header({ setDarkMode }: { setDarkMode: (prevMode: boolean) => void }) {
       <img
         src={
           isDarkMode
-            ? "../public/assets/images/dark-logo.svg"
-            : "../public/assets/images/light-logo.svg"
+            ? "../../public/assets/images/dark-logo.svg"
+            : "../../public/assets/images/light-logo.svg"
         }
         alt="logo"
       />
@@ -22,8 +22,8 @@ function header({ setDarkMode }: { setDarkMode: (prevMode: boolean) => void }) {
         <img
           src={
             isDarkMode
-              ? "../public/assets/images/icon-sun.svg"
-              : "../public/assets/images/icon-moon.svg"
+              ? "../../public/assets/images/icon-sun.svg"
+              : "../../public/assets/images/icon-moon.svg"
           }
           alt="moon"
         />
